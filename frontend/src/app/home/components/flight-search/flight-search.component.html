@@ -1,1 +1,69 @@
-<p>flight-search works!</p>
+<div class="container">
+  <h2>Choose Origin & Destination Airports:</h2>
+
+  <div>
+    <mat-form-field appearance="fill" class=" ">
+      <mat-label class="color-white select-bg">Origin</mat-label>
+      <mat-select class="color-white select-bg">
+        <mat-option
+          *ngFor="let origin of originList"
+          class="color-white select-bg"
+          [value]="origin"
+          >{{ origin }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label class="color-white select-bg">Destination</mat-label>
+      <mat-select class="color-white select-bg">
+        <mat-option class="color-white select-bg" value="JFK">JFK</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill" class="transparent-bg">
+      <mat-label class="color-white transparent-bg">Cabin Selection</mat-label>
+      <mat-select class="color-white">
+        <mat-option class="color-white select-bg" value="economy"
+          >Economy</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <mat-slide-toggle>Show Pro Filters</mat-slide-toggle>
+
+  <button mat-raised-button color="primary">Search</button>
+</div>
+
+<div class="card-container">
+  <mat-card class="result-card">
+    <img mat-card-image src="path_to_logo" alt="logo" />
+    <mat-card-title>KLM</mat-card-title>
+    <mat-card-subtitle
+      >{{ flightForm.value.origin }} ->
+      {{ flightForm.value.destination }}</mat-card-subtitle
+    >
+    <mat-card-content>
+      <p>Min Business Miles: N/A</p>
+      <p>Min Economy Miles: 53500 + $189</p>
+      <p>Min First Miles: N/A</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="result-card">
+    <img mat-card-image src="path_to_logo" alt="logo" />
+    <mat-card-title>Qantas</mat-card-title>
+    <mat-card-subtitle
+      >{{ flightForm.value.origin }} ->
+      {{ flightForm.value.destination }}</mat-card-subtitle
+    >
+    <mat-card-content>
+      <p>Min Business Miles: 144600 + $177</p>
+      <p>Min Economy Miles: 55200 + $158</p>
+      <p>Min First Miles: N/A</p>
+    </mat-card-content>
+  </mat-card>
+</div>

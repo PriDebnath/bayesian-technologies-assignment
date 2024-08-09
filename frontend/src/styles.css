@@ -1,5 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*   Root  variables */
+:root {
+  --app-bg: #1e3a3a;
+  --result-card-bg: rgb(29, 89, 63);
+  --select-bg: rgb(20, 20, 20);
+  --brand-button-bg: rgb(27, 178, 135);
+}
+
+/*  styles */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--app-bg);
+}
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--app-bg);
+  color: white;
+  border-radius: 10px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.result-card {
+  width: 250px;
+  background-color: var(--result-card-bg) !important;
+  color: white !important;
+}
+
+.select-bg {
+  background-color: var(--select-bg) !important;
+}
+
+.transparent-bg {
+  background-color: transparent !important;
+}
+
+.color-white {
+  color: white !important;
+}
