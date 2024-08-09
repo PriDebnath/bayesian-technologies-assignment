@@ -51,3 +51,7 @@ body {
 .color-white {
   color: white !important;
 }
+
+.brand-button-bg {
+  background-color: var(--brand-button-bg) !important;
+}
