@@ -60,33 +60,57 @@
     </button>
   </form>
 
-  <div class="card-container">
-    <mat-card class="result-card">
-      <img mat-card-image src="path_to_logo" alt="logo" />
-      <mat-card-title>KLM</mat-card-title>
-      <mat-card-subtitle
-        >{{ flightForm.value.origin }} ->
-        {{ flightForm.value.destination }}</mat-card-subtitle
-      >
-      <mat-card-content>
-        <p>Min Business Miles: N/A</p>
-        <p>Min Economy Miles: 53500 + $189</p>
-        <p>Min First Miles: N/A</p>
-      </mat-card-content>
-    </mat-card>
+  <div *ngIf="!loading; else loader">
+    <div class="card-container p-3" *ngIf="flights.length; else noFlight">
+      <div class="result-card rounded-4 mx-2" *ngFor="let flight of flights">
+        <div class="text-center py-2">
+          <img mat-card-image src="path_to_logo" alt="logo" />
+        </div>
+        <div class="text-center airline-name py-3">
+          {{ flight.partner_program }}
+        </div>
+        <div class="text-center route">
+          {{ flightForm.value.origin }} -> {{ flightForm.value.destination }}
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <span class="dates">
+            {{ flight.departureTimeFrom | date : "yyyy-MM-dd" }} {{ " - " }}
+            {{ flight.departureTimeTo | date : "yyyy-MM-dd" }}
+          </span>
+        </div>
 
-    <mat-card class="result-card">
-      <img mat-card-image src="path_to_logo" alt="logo" />
-      <mat-card-title>Qantas</mat-card-title>
-      <mat-card-subtitle
-        >{{ flightForm.value.origin }} ->
-        {{ flightForm.value.destination }}</mat-card-subtitle
-      >
-      <mat-card-content>
-        <p>Min Business Miles: 144600 + $177</p>
-        <p>Min Economy Miles: 55200 + $158</p>
-        <p>Min First Miles: N/A</p>
-      </mat-card-content>
-    </mat-card>
+        <mat-card-content>
+          <div class="text-center py-3">
+            <h1 class="min-miles">
+              {{ flight.min_business_miles ? flight.min_business_miles : "NA" }}
+            </h1>
+            <p class="miles-label">Min Business Miles</p>
+          </div>
+          <div class="text-center py-3">
+            <h1 class="min-miles">
+              {{ flight.min_economy_miles ? flight.min_economy_miles : "NA" }}
+              <span class="additional-charges">
+                {{
+                  flight.min_economy_tax ? "+ $" + flight.min_economy_tax : ""
+                }}
+              </span>
+            </h1>
+            <p class="miles-label">Min Economy Miles</p>
+          </div>
+          <div class="text-center py-3">
+            <h1 class="min-miles">
+              {{ flight.min_first_miles ? flight.min_first_miles : "NA" }}
+            </h1>
+            <p class="miles-label">Min First Miles</p>
+          </div>
+        </mat-card-content>
+      </div>
+    </div>
+    <ng-template #noFlight>
+      <h2 class="text-center">Try another search route.</h2>
+    </ng-template>
   </div>
+  <ng-template #loader>
+    <h2 class="text-center">Finding flights</h2>
+  </ng-template>
 </div>

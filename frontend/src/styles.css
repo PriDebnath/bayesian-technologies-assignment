@@ -55,3 +55,38 @@ body {
 .brand-button-bg {
   background-color: var(--brand-button-bg) !important;
 }
+
+/* list */
+.airline-name {
+  font-size: 24px !important;
+  font-weight: 500 !important;
+}
+
+.route {
+  font-size: 18px !important;
+  font-weight: normal !important;
+  font-weight: 300 !important;
+}
+
+.dates {
+  font-size: 12px !important;
+  font-weight: normal !important;
+}
+
+.min-miles {
+  font-size: 36px !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+
+.additional-charges {
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.miles-label {
+  font-size: 12px !important;
+  font-weight: normal !important;
+  margin: 0 !important;
+  font-weight: 300 !important;
+}
