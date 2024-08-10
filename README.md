@@ -10,6 +10,10 @@ cd  frontend
 npm i --legacy-peer-deps
 ```
 
+#### change environment in following file
+
+##### frontend/environment/environment.ts
+
 #### run frontend on local
 
 ```
