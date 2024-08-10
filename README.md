@@ -1,3 +1,19 @@
+# Live app
+
+https://bayesian-technologies-assignment-by-p.netlify.app/
+
+#### live screenshot 1
+
+<div style="border: 2px solid skyblue">
+<img src="./images/screenshot-1.png">
+</div>
+
+#### live screenshot 2
+
+<div style="border: 2px solid skyblue">
+<img src="./images/screenshot-2.png">
+</div>
+
 ## start frontend dev
 
 ```
